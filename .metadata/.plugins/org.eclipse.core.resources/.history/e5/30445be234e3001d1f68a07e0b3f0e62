@@ -1,0 +1,67 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
+import java.util.List;
+
+import DAO.EmpDao;
+import DTO.Emp;
+
+public class Program {
+
+	public static void main(String[] args) throws ParseException {
+		EmpDao ed = new EmpDao();
+		
+		//1. 전체조회
+		System.out.println("[전체조회]");
+		if (ed.getEmpAllList() != null) {
+			empPrint(ed.getEmpAllList());
+		}
+		
+		//2. 조건조회
+		System.out.println("[조건조회]");
+		if (ed.getEmp(7521) != null) {
+			empPrint(ed.getEmp(7521));
+		}
+		
+		//3. 삽입
+//		System.out.println("[삽입]");
+//		Date date = Date.valueOf("2020-01-01"); // 문자열을 Date로도 바꿀 수 있다!!!
+//		Emp emp = new Emp();
+//		emp.setEmpno(9999);
+//		emp.setEname("yejin");
+//		emp.setJob("IT");
+//		emp.setMgr(9999);
+//		emp.setHiredate(date);
+//		emp.setSal(3000);
+//		emp.setComm(500);
+//		emp.setDeptno(20);
+//		ed.insertEmp(emp);
+
+//		//4. 삭제
+//		System.out.println("[삭제]");
+//		ed.deleteEmp(9999);
+		
+		//5. 수정
+		Emp emp2 = new Emp();
+		emp2.setEmpno(9999);
+		emp2.setEname("yejin");
+		emp2.setJob("ITIT");
+		emp2.setSal(2000);
+		emp2.setHiredate(Date.valueOf("2022-01-01"));
+		ed.updateEmp(emp2);
+
+	}
+	
+	
+
+	public static void empPrint(Emp emp) {
+		System.out.println(emp);
+	}
+
+	public static void empPrint(List<Emp> empList) {
+		for (Emp emp : empList) {
+			System.out.println(emp);
+		}
+	}
+
+}

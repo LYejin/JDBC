@@ -1,0 +1,32 @@
+import java.util.List;
+
+import DAO.EmpDao;
+import DTO.Emp;
+
+public class Program {
+
+	public static void main(String[] args) {
+		EmpDao ed = new EmpDao();
+		
+		//1. 전체조회
+		System.out.println("[전체조회]");
+		if (ed.getEmpAllList() != null) {
+			empListPrint(ed.getEmpAllList());
+		}
+		
+		//2. 조건조회 
+		
+		
+	}
+	
+	public static void empPrint(Emp emp) {
+		System.out.println(emp);
+	}
+	
+	public static void empListPrint(List<Emp> empList) {
+		for (Emp emp : empList) {
+			System.out.println(emp);
+		}
+	}
+	
+}

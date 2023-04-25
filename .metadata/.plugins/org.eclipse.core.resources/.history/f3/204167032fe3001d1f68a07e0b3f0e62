@@ -1,0 +1,49 @@
+import java.sql.Date;
+import java.util.List;
+
+import DAO.EmpDao;
+import DTO.Emp;
+
+public class Program {
+
+	public static void main(String[] args) {
+		EmpDao ed = new EmpDao();
+		
+		//1. 전체조회
+		System.out.println("[전체조회]");
+		if (ed.getEmpAllList() != null) {
+			empPrint(ed.getEmpAllList());
+		}
+		
+		//2. 조건조회
+		System.out.println("[조건조회]");
+		if (ed.getEmp(7521) != null) {
+			empPrint(ed.getEmp(7521));
+		}
+		
+		//3. 삽입
+		System.out.println("[삽입]");
+		Date date = new Date(2023-04-25);
+		System.out.println(date);
+//		Emp emp = new Emp();
+//		emp.setEmpno(9999);
+//		emp.setEname("yejin");
+//		emp.setJob("IT");
+//		emp.setMgr(9999);
+//		emp.setHiredate(date);
+		
+		
+		
+	}
+	
+	public static void empPrint(Emp emp) {
+		System.out.println(emp);
+	}
+	
+	public static void empPrint(List<Emp> empList) {
+		for (Emp emp : empList) {
+			System.out.println(emp);
+		}
+	}
+	
+}
