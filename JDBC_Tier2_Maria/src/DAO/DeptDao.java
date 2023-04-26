@@ -145,7 +145,7 @@ public class DeptDao {
 	//delete from dept where deptno=?
 	public int dataDelete(int deptno) {
 		conn = null;
-		pstmt = null;
+		pstmt  = null;  
 		int row = 0;
 		try {
 			conn = SingletonHelper.getConnection("mariadb");
@@ -163,4 +163,5 @@ public class DeptDao {
 		}
 		return row;
 	}
+	//test
 }
