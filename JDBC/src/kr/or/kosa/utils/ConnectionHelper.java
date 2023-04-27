@@ -28,7 +28,7 @@ public class ConnectionHelper {
 			if (dsn.equals("oracle")) {
 				conn= DriverManager.getConnection("jdbc:oracle:thin:@localhost:49161:xe","KOSA","1004");
 			} else if (dsn.equals("mariadb")) {
-				conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/kosadb","kosa","1004");
+				conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/itword","super","1004");
 			} 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -39,9 +39,9 @@ public class ConnectionHelper {
 		Connection conn = null;
 		try {
 			if (dsn.equals("oracle")) {
-				conn= DriverManager.getConnection("jdbc:oracle:thin:@localhost:49161:xe","KOSA","1004"); // id, pwd)
+				conn= DriverManager.getConnection("jdbc:oracle:thin:@localhost:49161:xe",id,pwd); // id, pwd)
 			} else if (dsn.equals("mariadb")) {
-				conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/kosadb","kosa","1004"); // id, pwd)
+				conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/itword",id,pwd); // id, pwd)
 			} 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

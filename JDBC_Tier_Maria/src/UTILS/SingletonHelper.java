@@ -1,4 +1,4 @@
-package kr.or.kosa.utils;
+package UTILS;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +12,7 @@ public class SingletonHelper {
 	
 	public static Connection getConnection(String dsn) {
 		if (conn != null) {
-			System.out.println("conn : " +conn);
+			//System.out.println("conn : " +conn);
 			return conn;
 		}  // 교수님이 알려주신 방식 
 		
@@ -20,7 +20,7 @@ public class SingletonHelper {
 				if (dsn.equals("oracle")) {
 					conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:49161:xe", "KOSA", "1004");
 				} else if (dsn.equals("mariadb")) {
-					conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/itword", "super", "1004");
+					conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/itword","super","1004");
 				}
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
