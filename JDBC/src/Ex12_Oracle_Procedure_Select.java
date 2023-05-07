@@ -40,7 +40,7 @@ public class Ex12_Oracle_Procedure_Select {
 			     cstmt.setInt(1, 2000);
 			     cstmt.registerOutParameter(2, OracleTypes.CURSOR); // p_cursor OUT SYS_REFCURSOR 
 			  
-			     boolean result = cstmt.execute();
+			     cstmt.execute();
 			     
 			     rs = (ResultSet)cstmt.getObject(2);
 			     while(rs.next()) {
