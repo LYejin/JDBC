@@ -24,7 +24,6 @@ public class AttendanceCodeDao {
 	//select attendance_id, attendance_name from attendance_code
 	public List<AttendanceCode> getAttendanceCodeAllList() {
 		List<AttendanceCode> attendanceCodeList = new ArrayList<>();
-		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -77,7 +76,6 @@ public class AttendanceCodeDao {
 		return attendanceCode;
 	}
 	
-	
 	//3. 근태분류 데이터 삽입
 	//insert into attendance_code(attendance_id, attendance_name) values(?,?)
 	public int dataInsert(AttendanceCode emp) {
@@ -101,7 +99,6 @@ public class AttendanceCodeDao {
 		}
 		return row;
 	}
-	
 	
 	//4. 부서 데이터 전체 수정
 	//update emp set emp_name=?,emp_job=?,emp_sal=?,dept_id=?,emp_mgr_id=? where emp_id=?
